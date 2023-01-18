@@ -32,6 +32,19 @@
                         label: 'Home',
                         routeName: 'homepage'
                     },
+                    {
+                        label: 'Projects',
+                        routeName: 'projects'
+                    },
+                    {
+                        label: 'About Me',
+                        routeName: 'aboutme'
+                    },
+                    {
+                        label: 'Contacts',
+                        routeName: 'contacts'
+                    },
+
                   
                 ]
             }
