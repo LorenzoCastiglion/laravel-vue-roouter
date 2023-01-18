@@ -4,7 +4,7 @@ import HomePage from './pages/HomePage.vue';
 import Projects from  './pages/Projects.vue';
 import AboutMe from './pages/AboutMe.vue';
 import Contacts from './pages/Contacts.vue';
-import SingleProject from './pages/SingleProjects.vue';
+import SingleProject from './pages/SingleProject.vue';
 
 
 const router = createRouter({
