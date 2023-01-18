@@ -1,44 +1,20 @@
 <template>
-  <div>
-
-<ul>
-  <li v-for="(project,i) in projects" :key="i">{{ project.name }}</li>
-</ul>
-  </div>
-</template>
-
-<script>
-import axios from "axios";
-
-export default {
-name: 'App',
-data(){
-  return{
-    title : 'hello world',
-    apiURL: 'http://localhost:8000/api',
-    projects:[],
-  }
-   
-
+  <AppHeader></AppHeader>
+  <main class="container">
+    <router-view></router-view>
+  </main>
   
-},
-
-methods:{
-  getProjects(){
-    axios.get(`${this.apiURL}/projects`).then((response)=>{
-       this.projects = response.data.results.data
+</template>
+<script>
+import AppHeader from './components/HeaderComponent.vue';
+  export default {
+    name: 'App',
+    components:{
+      AppHeader
+    }
     
-    })
   }
-},
-
-mounted(){
-  this.getProjects();
-}
-
-}
 </script>
 
 <style lang="scss" scoped>
-
 </style>
