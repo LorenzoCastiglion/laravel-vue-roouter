@@ -1,19 +1,13 @@
 <template>
-      <section v-if="post">
-   <h1>{{ post.title }}</h1>
-   <img :src="`${store.imagBasePath}${post.cover_image}`" class="card-img-top" :alt="post.title">
-   <p>{{ post.content }}</p>
-   <div v-if="post.category">
-    <h5>Category: {{ post.category.name }}</h5>
-   </div>
-   <div v-if="post.tags && post.tags.length > 0">
-    <h5>Tags</h5>
-    <div>
-        <span v-for="(tag,index) in post.tags" :key="index" class="badge text-bg-info">{{ tag.name }}</span>
-    </div>
-   </div>
-   </section>
-   <section v-else>Loading...</section>
+     <section v-if="project">
+        <div>
+            <img v-if="project.cover_image" :src="`${store.imagBasePath}${project.cover_image}`" :alt="`${project.name}`" class="proj-img">
+            <img v-else src="https://i.pinimg.com/originals/20/67/71/2067716a5d1aec5612a07e03db86f9d4.jpg" alt="">
+        </div>
+        <div>
+            
+        </div>
+     </section>
 </template>
 
 <script>
@@ -28,13 +22,14 @@ export default {
             project: null,
         }
     },
-    method: {
+    methods: {
         getProject() {
             axios.get(`${this.store.apiBaseUrl}/projects/${this.$route.params.slug}`).then((response) => {
+                console.log(response.data.results)
                 if (response.data.success) {
                     this.project = response.data.results;
                 } else {
-                    this.$router.push({ name: 'not-found' })
+                    this.$router.push({ name: 'notfound' })
                 }
             });
         }
@@ -42,9 +37,11 @@ export default {
     },
 
     mounted(){
-        setTimeout(
-            this.getProject(), 3000
-        )
+       setTimeout(
+        this.getProject,3000
+       )
+            
+        
         
     }
     
@@ -52,5 +49,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.proj-img{
+    height: 300px;
+}
 
 </style>

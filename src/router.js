@@ -32,7 +32,7 @@ const router = createRouter({
             component: Contacts
         },
         {
-            path: '/single-project',
+            path: '/projects/:slug',
             name: 'singleproject',
             component: SingleProject
         },
