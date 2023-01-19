@@ -49,8 +49,6 @@ export default {
         getProject(pagenum) {
 
             axios.get(`${this.store.apiBaseUrl}/projects`, { params: { page: pagenum } }).then((response) => {
-                console.log(pagenum)
-                console.log(response.data.results);
                 this.projects = response.data.results.data;
                 this.currentPage = response.data.results.current_page;
                 this.lastPage = response.data.results.last_page;
