@@ -10,6 +10,10 @@
             <p>{{ project.diff_lvl }}</p>
         </div>
      </section>
+     <div class="text-center mt-5" v-else>
+   
+        <span class="loader "></span>
+     </div>
 </template>
 
 <script>
@@ -55,5 +59,42 @@ export default {
 .proj-img{
     height: 300px;
 }
+
+
+// loeader
+.loader {
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  position: relative;
+}
+.loader::after,
+.loader::before {
+  content: '';  
+  box-sizing: border-box;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid rgb(176, 25, 25);
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: animloader 2s linear infinite;
+}
+.loader::after {
+  animation-delay: 1s;
+}
+
+@keyframes animloader {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
 
 </style>
