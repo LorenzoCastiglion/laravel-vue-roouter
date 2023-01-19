@@ -1,8 +1,8 @@
 <template>
-     <section v-if="project">
-        <div>
+     <section v-if="project" class=" d-flex">
+        <div class="img-wrap">
             <img v-if="project.cover_image" :src="`${store.imagBasePath}${project.cover_image}`" :alt="`${project.name}`" class="proj-img">
-            <img v-else src="https://i.pinimg.com/originals/20/67/71/2067716a5d1aec5612a07e03db86f9d4.jpg" alt="">
+            <img v-else src="https://i.pinimg.com/originals/20/67/71/2067716a5d1aec5612a07e03db86f9d4.jpg" alt="" class="proj-img">
         </div>
         <div>
             <h2>{{ project.name }}</h2>
