@@ -5,7 +5,9 @@
             <img v-else src="https://i.pinimg.com/originals/20/67/71/2067716a5d1aec5612a07e03db86f9d4.jpg" alt="">
         </div>
         <div>
-            
+            <h2>{{ project.name }}</h2>
+            <p>{{ project.description }}</p>
+            <p>{{ project.diff_lvl }}</p>
         </div>
      </section>
 </template>
